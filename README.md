@@ -18,5 +18,7 @@
 目前服务端展示的数据都是通过测试脚本发送的虚拟数据，仍需要解决客户端自动收集自身设备信息并自动发送给服务端的功能。
 
 #### 服务端
+
 仍需实现平台的登陆验证功能，以保证信息的安全性。
+
 ![login_require](http://imglf3.nosdn0.126.net/img/c09lVS9TR3YrUFlzK3dhNFJtSHc3QWV0dFowQm5QTTJOZ1ZWTzNTVG04QUR4VEQ1ZnRLalZRPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg)
