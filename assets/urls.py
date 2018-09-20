@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^dashboard/', views.dashboard, name='dashboard'),
     url(r'^index/', views.index, name='index'),
     url(r'^detail/(?P<asset_id>[0-9]+)/$', views.detail, name='detail'),
+    url(r'^event/$', views.event, name='event'),
     url(r'^$', views.dashboard),
 ]

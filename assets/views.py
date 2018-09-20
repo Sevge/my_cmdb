@@ -2,9 +2,12 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.auth.decorators import login_required
 import json
 from . import models
 from . import asset_handler
+
 
 @csrf_exempt
 def report(request):
@@ -34,11 +37,13 @@ def report(request):
             return HttpResponse('没有资产sn序列号，请检查数据格式是否正确！')
 
 
+@login_required
 def index(request):
     assets = models.Asset.objects.all()
     return render(request, 'assets/index.html', locals())
 
 
+@login_required
 def dashboard(request):
     total = models.Asset.objects.count()
     upline = models.Asset.objects.filter(status=0).count()
@@ -58,9 +63,23 @@ def dashboard(request):
     software_number = models.Software.objects.count()
     return render(request, 'assets/dashboard.html', locals())
 
-
+@login_required
 def detail(request, asset_id):
     asset = get_object_or_404(models.Asset, id=asset_id)
     return render(request, 'assets/detail.html', locals())
+
+
+@login_required
+def event(request):
+    events = models.EventLog.objects.all().order_by('-date')
+    paginator = Paginator(events, 5)
+    page = request.GET.get('page')
+    try:
+        objs = paginator.page(page)
+    except PageNotAnInteger:
+        objs = paginator.page(1)
+    except EmptyPage:
+        objs = paginator.page(paginator.num_pages) # 如果paeg超过范围，跳转到最后一页
+    return render(request, 'assets/event.html', {'events': objs})
 
 

@@ -20,7 +20,8 @@ from assets import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.dashboard),
+    url(r'^$', views.dashboard, name='index'),
     url(r'^assets/', include('assets.urls')),
+    url(r'^accounts/', include('accounts.urls')),
 
 ]

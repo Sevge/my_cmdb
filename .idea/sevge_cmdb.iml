@@ -15,7 +15,7 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/Python_practice" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.6.5 virtualenv at C:\Users\Administrator\Envs\cmdb_env" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.6.4 virtualenv at D:\practice\VirtualEnv\djangopractice" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">

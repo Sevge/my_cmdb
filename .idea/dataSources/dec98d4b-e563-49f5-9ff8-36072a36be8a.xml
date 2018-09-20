@@ -6,775 +6,773 @@
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <table id="3" parent="2" name="assets_asset"/>
-    <table id="4" parent="2" name="assets_asset_tags"/>
-    <table id="5" parent="2" name="assets_businessunit"/>
-    <table id="6" parent="2" name="assets_contract"/>
-    <table id="7" parent="2" name="assets_cpu"/>
-    <table id="8" parent="2" name="assets_disk"/>
-    <table id="9" parent="2" name="assets_eventlog"/>
-    <table id="10" parent="2" name="assets_idc"/>
-    <table id="11" parent="2" name="assets_manufacturer"/>
-    <table id="12" parent="2" name="assets_networkdevice"/>
-    <table id="13" parent="2" name="assets_newassetapprovalzone"/>
-    <table id="14" parent="2" name="assets_nic"/>
-    <table id="15" parent="2" name="assets_ram"/>
-    <table id="16" parent="2" name="assets_securitydevice"/>
-    <table id="17" parent="2" name="assets_server"/>
-    <table id="18" parent="2" name="assets_software"/>
-    <table id="19" parent="2" name="assets_storagedevice"/>
-    <table id="20" parent="2" name="assets_tag"/>
-    <table id="21" parent="2" name="auth_group"/>
-    <table id="22" parent="2" name="auth_group_permissions"/>
-    <table id="23" parent="2" name="auth_permission"/>
-    <table id="24" parent="2" name="auth_user"/>
-    <table id="25" parent="2" name="auth_user_groups"/>
-    <table id="26" parent="2" name="auth_user_user_permissions"/>
-    <table id="27" parent="2" name="django_admin_log"/>
-    <table id="28" parent="2" name="django_content_type"/>
-    <table id="29" parent="2" name="django_migrations"/>
-    <table id="30" parent="2" name="django_session"/>
-    <table id="31" parent="2" name="sqlite_master"/>
-    <table id="32" parent="2" name="sqlite_sequence"/>
-    <column id="33" parent="3" name="id">
+    <table id="3" parent="2" name="accounts_user"/>
+    <table id="4" parent="2" name="assets_asset"/>
+    <table id="5" parent="2" name="assets_asset_tags"/>
+    <table id="6" parent="2" name="assets_businessunit"/>
+    <table id="7" parent="2" name="assets_contract"/>
+    <table id="8" parent="2" name="assets_cpu"/>
+    <table id="9" parent="2" name="assets_disk"/>
+    <table id="10" parent="2" name="assets_eventlog"/>
+    <table id="11" parent="2" name="assets_idc"/>
+    <table id="12" parent="2" name="assets_manufacturer"/>
+    <table id="13" parent="2" name="assets_networkdevice"/>
+    <table id="14" parent="2" name="assets_newassetapprovalzone"/>
+    <table id="15" parent="2" name="assets_nic"/>
+    <table id="16" parent="2" name="assets_ram"/>
+    <table id="17" parent="2" name="assets_securitydevice"/>
+    <table id="18" parent="2" name="assets_server"/>
+    <table id="19" parent="2" name="assets_software"/>
+    <table id="20" parent="2" name="assets_storagedevice"/>
+    <table id="21" parent="2" name="assets_tag"/>
+    <table id="22" parent="2" name="auth_group"/>
+    <table id="23" parent="2" name="auth_group_permissions"/>
+    <table id="24" parent="2" name="auth_permission"/>
+    <table id="25" parent="2" name="auth_user"/>
+    <table id="26" parent="2" name="auth_user_groups"/>
+    <table id="27" parent="2" name="auth_user_user_permissions"/>
+    <table id="28" parent="2" name="django_admin_log"/>
+    <table id="29" parent="2" name="django_content_type"/>
+    <table id="30" parent="2" name="django_migrations"/>
+    <table id="31" parent="2" name="django_session"/>
+    <table id="32" parent="2" name="sqlite_master"/>
+    <table id="33" parent="2" name="sqlite_sequence"/>
+    <column id="34" parent="3" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="34" parent="3" name="asset_type">
+    <column id="35" parent="3" name="name">
+      <Position>1</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="3" name="password">
+      <Position>2</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="3" name="email">
+      <Position>3</Position>
+      <DataType>varchar(254)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="3" name="c_time">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="39" parent="3" name="sqlite_autoindex_accounts_user_1">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="40" parent="3" name="sqlite_autoindex_accounts_user_2">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="41" parent="3">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="42" parent="3">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_accounts_user_1</UnderlyingIndexName>
+    </key>
+    <key id="43" parent="3">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_accounts_user_2</UnderlyingIndexName>
+    </key>
+    <column id="44" parent="4" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="45" parent="4" name="asset_type">
       <Position>1</Position>
       <DataType>varchar(64)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="35" parent="3" name="name">
+    <column id="46" parent="4" name="name">
       <Position>2</Position>
       <DataType>varchar(64)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="36" parent="3" name="sn">
+    <column id="47" parent="4" name="sn">
       <Position>3</Position>
       <DataType>varchar(128)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="3" name="status">
+    <column id="48" parent="4" name="manage_ip">
       <Position>4</Position>
-      <DataType>smallint|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="38" parent="3" name="manage_ip">
-      <Position>5</Position>
       <DataType>char(39)|0</DataType>
     </column>
-    <column id="39" parent="3" name="purchase_day">
+    <column id="49" parent="4" name="purchase_day">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="50" parent="4" name="expire_day">
       <Position>6</Position>
       <DataType>date|0</DataType>
     </column>
-    <column id="40" parent="3" name="expire_day">
+    <column id="51" parent="4" name="price">
       <Position>7</Position>
-      <DataType>date|0</DataType>
-    </column>
-    <column id="41" parent="3" name="price">
-      <Position>8</Position>
       <DataType>real|0</DataType>
     </column>
-    <column id="42" parent="3" name="memo">
-      <Position>9</Position>
+    <column id="52" parent="4" name="memo">
+      <Position>8</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="43" parent="3" name="c_time">
+    <column id="53" parent="4" name="c_time">
+      <Position>9</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="4" name="m_time">
       <Position>10</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="44" parent="3" name="m_time">
+    <column id="55" parent="4" name="admin_id">
       <Position>11</Position>
-      <DataType>datetime|0</DataType>
-      <NotNull>1</NotNull>
+      <DataType>integer|0</DataType>
     </column>
-    <column id="45" parent="3" name="admin_id">
+    <column id="56" parent="4" name="approved_by_id">
       <Position>12</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="46" parent="3" name="approved_by_id">
+    <column id="57" parent="4" name="business_unit_id">
       <Position>13</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="47" parent="3" name="business_unit_id">
+    <column id="58" parent="4" name="contract_id">
       <Position>14</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="48" parent="3" name="contract_id">
+    <column id="59" parent="4" name="idc_id">
       <Position>15</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="49" parent="3" name="idc_id">
+    <column id="60" parent="4" name="manufacturer_id">
       <Position>16</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="50" parent="3" name="manufacturer_id">
+    <column id="61" parent="4" name="status">
       <Position>17</Position>
-      <DataType>integer|0</DataType>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <index id="51" parent="3" name="sqlite_autoindex_assets_asset_1">
+    <index id="62" parent="4" name="sqlite_autoindex_assets_asset_1">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="52" parent="3" name="sqlite_autoindex_assets_asset_2">
+    <index id="63" parent="4" name="sqlite_autoindex_assets_asset_2">
       <ColNames>sn</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="53" parent="3" name="assets_asset_admin_id_db237f4a">
+    <index id="64" parent="4" name="assets_asset_admin_id_db237f4a">
       <ColNames>admin_id</ColNames>
     </index>
-    <index id="54" parent="3" name="assets_asset_approved_by_id_05329a6a">
+    <index id="65" parent="4" name="assets_asset_approved_by_id_05329a6a">
       <ColNames>approved_by_id</ColNames>
     </index>
-    <index id="55" parent="3" name="assets_asset_business_unit_id_24df8681">
+    <index id="66" parent="4" name="assets_asset_business_unit_id_24df8681">
       <ColNames>business_unit_id</ColNames>
     </index>
-    <index id="56" parent="3" name="assets_asset_contract_id_2b07c3cb">
+    <index id="67" parent="4" name="assets_asset_contract_id_2b07c3cb">
       <ColNames>contract_id</ColNames>
     </index>
-    <index id="57" parent="3" name="assets_asset_idc_id_4e92fc57">
+    <index id="68" parent="4" name="assets_asset_idc_id_4e92fc57">
       <ColNames>idc_id</ColNames>
     </index>
-    <index id="58" parent="3" name="assets_asset_manufacturer_id_30ff9133">
+    <index id="69" parent="4" name="assets_asset_manufacturer_id_30ff9133">
       <ColNames>manufacturer_id</ColNames>
     </index>
-    <key id="59" parent="3">
+    <key id="70" parent="4">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="60" parent="3">
+    <key id="71" parent="4">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_assets_asset_1</UnderlyingIndexName>
     </key>
-    <key id="61" parent="3">
+    <key id="72" parent="4">
       <ColNames>sn</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_assets_asset_2</UnderlyingIndexName>
     </key>
-    <foreign-key id="62" parent="3">
+    <foreign-key id="73" parent="4">
       <ColNames>admin_id</ColNames>
       <RefTableName>auth_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="63" parent="3">
+    <foreign-key id="74" parent="4">
       <ColNames>approved_by_id</ColNames>
       <RefTableName>auth_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="64" parent="3">
+    <foreign-key id="75" parent="4">
       <ColNames>business_unit_id</ColNames>
       <RefTableName>assets_businessunit</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="65" parent="3">
+    <foreign-key id="76" parent="4">
       <ColNames>contract_id</ColNames>
       <RefTableName>assets_contract</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="66" parent="3">
+    <foreign-key id="77" parent="4">
       <ColNames>idc_id</ColNames>
       <RefTableName>assets_idc</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="67" parent="3">
+    <foreign-key id="78" parent="4">
       <ColNames>manufacturer_id</ColNames>
       <RefTableName>assets_manufacturer</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="68" parent="4" name="id">
+    <column id="79" parent="5" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="69" parent="4" name="asset_id">
+    <column id="80" parent="5" name="asset_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="70" parent="4" name="tag_id">
+    <column id="81" parent="5" name="tag_id">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="71" parent="4" name="assets_asset_tags_asset_id_tag_id_ff789690_uniq">
+    <index id="82" parent="5" name="assets_asset_tags_asset_id_tag_id_ff789690_uniq">
       <ColNames>asset_id
 tag_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="72" parent="4" name="assets_asset_tags_asset_id_85d69be9">
+    <index id="83" parent="5" name="assets_asset_tags_asset_id_85d69be9">
       <ColNames>asset_id</ColNames>
     </index>
-    <index id="73" parent="4" name="assets_asset_tags_tag_id_04269c11">
+    <index id="84" parent="5" name="assets_asset_tags_tag_id_04269c11">
       <ColNames>tag_id</ColNames>
     </index>
-    <key id="74" parent="4">
+    <key id="85" parent="5">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="75" parent="4">
+    <foreign-key id="86" parent="5">
       <ColNames>asset_id</ColNames>
       <RefTableName>assets_asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="76" parent="4">
+    <foreign-key id="87" parent="5">
       <ColNames>tag_id</ColNames>
       <RefTableName>assets_tag</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="77" parent="5" name="id">
+    <column id="88" parent="6" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="78" parent="5" name="name">
+    <column id="89" parent="6" name="name">
       <Position>1</Position>
       <DataType>varchar(64)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="79" parent="5" name="memo">
+    <column id="90" parent="6" name="memo">
       <Position>2</Position>
       <DataType>varchar(64)|0</DataType>
     </column>
-    <column id="80" parent="5" name="parent_unit_id">
+    <column id="91" parent="6" name="parent_unit_id">
       <Position>3</Position>
       <DataType>integer|0</DataType>
     </column>
-    <index id="81" parent="5" name="sqlite_autoindex_assets_businessunit_1">
+    <index id="92" parent="6" name="sqlite_autoindex_assets_businessunit_1">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="82" parent="5" name="assets_businessunit_parent_unit_id_b9c536a6">
+    <index id="93" parent="6" name="assets_businessunit_parent_unit_id_b9c536a6">
       <ColNames>parent_unit_id</ColNames>
     </index>
-    <key id="83" parent="5">
+    <key id="94" parent="6">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="84" parent="5">
+    <key id="95" parent="6">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_assets_businessunit_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="85" parent="5">
+    <foreign-key id="96" parent="6">
       <ColNames>parent_unit_id</ColNames>
       <RefTableName>assets_businessunit</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="86" parent="6" name="id">
+    <column id="97" parent="7" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="87" parent="6" name="sn">
+    <column id="98" parent="7" name="sn">
       <Position>1</Position>
       <DataType>varchar(128)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="88" parent="6" name="name">
+    <column id="99" parent="7" name="name">
       <Position>2</Position>
       <DataType>varchar(64)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="89" parent="6" name="memo">
+    <column id="100" parent="7" name="memo">
       <Position>3</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="90" parent="6" name="price">
+    <column id="101" parent="7" name="price">
       <Position>4</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="91" parent="6" name="detail">
+    <column id="102" parent="7" name="detail">
       <Position>5</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="92" parent="6" name="start_day">
+    <column id="103" parent="7" name="start_day">
       <Position>6</Position>
       <DataType>date|0</DataType>
     </column>
-    <column id="93" parent="6" name="end_day">
+    <column id="104" parent="7" name="end_day">
       <Position>7</Position>
       <DataType>date|0</DataType>
     </column>
-    <column id="94" parent="6" name="license">
+    <column id="105" parent="7" name="license">
       <Position>8</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="95" parent="6" name="c_day">
+    <column id="106" parent="7" name="c_day">
       <Position>9</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="96" parent="6" name="m_day">
+    <column id="107" parent="7" name="m_day">
       <Position>10</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="97" parent="6" name="sqlite_autoindex_assets_contract_1">
+    <index id="108" parent="7" name="sqlite_autoindex_assets_contract_1">
       <ColNames>sn</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="98" parent="6">
+    <key id="109" parent="7">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="99" parent="6">
+    <key id="110" parent="7">
       <ColNames>sn</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_assets_contract_1</UnderlyingIndexName>
     </key>
-    <column id="100" parent="7" name="id">
+    <column id="111" parent="8" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="101" parent="7" name="cpu_model">
+    <column id="112" parent="8" name="cpu_model">
       <Position>1</Position>
       <DataType>varchar(128)|0</DataType>
     </column>
-    <column id="102" parent="7" name="cpu_count">
+    <column id="113" parent="8" name="cpu_count">
       <Position>2</Position>
       <DataType>smallint unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="103" parent="7" name="cpu_core_count">
+    <column id="114" parent="8" name="cpu_core_count">
       <Position>3</Position>
       <DataType>smallint unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="104" parent="7" name="asset_id">
+    <column id="115" parent="8" name="asset_id">
       <Position>4</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="105" parent="7" name="sqlite_autoindex_assets_cpu_1">
+    <index id="116" parent="8" name="sqlite_autoindex_assets_cpu_1">
       <ColNames>asset_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="106" parent="7">
+    <key id="117" parent="8">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="107" parent="7">
+    <key id="118" parent="8">
       <ColNames>asset_id</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_assets_cpu_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="108" parent="7">
+    <foreign-key id="119" parent="8">
       <ColNames>asset_id</ColNames>
       <RefTableName>assets_asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="109" parent="8" name="id">
+    <column id="120" parent="9" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="110" parent="8" name="sn">
+    <column id="121" parent="9" name="sn">
       <Position>1</Position>
       <DataType>varchar(128)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="111" parent="8" name="slot">
+    <column id="122" parent="9" name="slot">
       <Position>2</Position>
       <DataType>varchar(64)|0</DataType>
     </column>
-    <column id="112" parent="8" name="model">
+    <column id="123" parent="9" name="model">
       <Position>3</Position>
       <DataType>varchar(128)|0</DataType>
     </column>
-    <column id="113" parent="8" name="manufacturer">
+    <column id="124" parent="9" name="manufacturer">
       <Position>4</Position>
       <DataType>varchar(128)|0</DataType>
     </column>
-    <column id="114" parent="8" name="capacity">
+    <column id="125" parent="9" name="capacity">
       <Position>5</Position>
       <DataType>real|0</DataType>
     </column>
-    <column id="115" parent="8" name="interface_type">
+    <column id="126" parent="9" name="interface_type">
       <Position>6</Position>
       <DataType>varchar(16)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="116" parent="8" name="asset_id">
+    <column id="127" parent="9" name="asset_id">
       <Position>7</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="117" parent="8" name="assets_disk_asset_id_sn_5ee64e1c_uniq">
+    <index id="128" parent="9" name="assets_disk_asset_id_sn_5ee64e1c_uniq">
       <ColNames>asset_id
 sn</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="118" parent="8" name="assets_disk_asset_id_b8cd1d73">
+    <index id="129" parent="9" name="assets_disk_asset_id_b8cd1d73">
       <ColNames>asset_id</ColNames>
     </index>
-    <key id="119" parent="8">
+    <key id="130" parent="9">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="120" parent="8">
+    <foreign-key id="131" parent="9">
       <ColNames>asset_id</ColNames>
       <RefTableName>assets_asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="121" parent="9" name="id">
+    <column id="132" parent="10" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="122" parent="9" name="name">
+    <column id="133" parent="10" name="name">
       <Position>1</Position>
       <DataType>varchar(128)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="123" parent="9" name="event_type">
+    <column id="134" parent="10" name="event_type">
       <Position>2</Position>
       <DataType>smallint|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="124" parent="9" name="component">
+    <column id="135" parent="10" name="component">
       <Position>3</Position>
       <DataType>varchar(256)|0</DataType>
     </column>
-    <column id="125" parent="9" name="detail">
+    <column id="136" parent="10" name="detail">
       <Position>4</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="126" parent="9" name="date">
+    <column id="137" parent="10" name="date">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="127" parent="9" name="memo">
+    <column id="138" parent="10" name="memo">
       <Position>6</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="128" parent="9" name="asset_id">
+    <column id="139" parent="10" name="asset_id">
       <Position>7</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="129" parent="9" name="new_asset_id">
+    <column id="140" parent="10" name="new_asset_id">
       <Position>8</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="130" parent="9" name="user_id">
+    <column id="141" parent="10" name="user_id">
       <Position>9</Position>
       <DataType>integer|0</DataType>
     </column>
-    <index id="131" parent="9" name="assets_eventlog_asset_id_150968b8">
+    <index id="142" parent="10" name="assets_eventlog_asset_id_150968b8">
       <ColNames>asset_id</ColNames>
     </index>
-    <index id="132" parent="9" name="assets_eventlog_new_asset_id_8ddfaaf8">
+    <index id="143" parent="10" name="assets_eventlog_new_asset_id_8ddfaaf8">
       <ColNames>new_asset_id</ColNames>
     </index>
-    <index id="133" parent="9" name="assets_eventlog_user_id_3e5400a8">
+    <index id="144" parent="10" name="assets_eventlog_user_id_3e5400a8">
       <ColNames>user_id</ColNames>
     </index>
-    <key id="134" parent="9">
+    <key id="145" parent="10">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="135" parent="9">
+    <foreign-key id="146" parent="10">
       <ColNames>asset_id</ColNames>
       <RefTableName>assets_asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="136" parent="9">
+    <foreign-key id="147" parent="10">
       <ColNames>new_asset_id</ColNames>
       <RefTableName>assets_newassetapprovalzone</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="137" parent="9">
+    <foreign-key id="148" parent="10">
       <ColNames>user_id</ColNames>
       <RefTableName>auth_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="138" parent="10" name="id">
+    <column id="149" parent="11" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="139" parent="10" name="name">
+    <column id="150" parent="11" name="name">
       <Position>1</Position>
       <DataType>varchar(64)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="140" parent="10" name="memo">
+    <column id="151" parent="11" name="memo">
       <Position>2</Position>
       <DataType>varchar(128)|0</DataType>
     </column>
-    <index id="141" parent="10" name="sqlite_autoindex_assets_idc_1">
+    <index id="152" parent="11" name="sqlite_autoindex_assets_idc_1">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="142" parent="10">
+    <key id="153" parent="11">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="143" parent="10">
+    <key id="154" parent="11">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_assets_idc_1</UnderlyingIndexName>
     </key>
-    <column id="144" parent="11" name="id">
+    <column id="155" parent="12" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="145" parent="11" name="name">
+    <column id="156" parent="12" name="name">
       <Position>1</Position>
       <DataType>varchar(64)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="146" parent="11" name="telephone">
+    <column id="157" parent="12" name="telephone">
       <Position>2</Position>
       <DataType>varchar(30)|0</DataType>
     </column>
-    <column id="147" parent="11" name="memo">
+    <column id="158" parent="12" name="memo">
       <Position>3</Position>
       <DataType>varchar(128)|0</DataType>
     </column>
-    <index id="148" parent="11" name="sqlite_autoindex_assets_manufacturer_1">
+    <index id="159" parent="12" name="sqlite_autoindex_assets_manufacturer_1">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="149" parent="11">
+    <key id="160" parent="12">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="150" parent="11">
+    <key id="161" parent="12">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_assets_manufacturer_1</UnderlyingIndexName>
     </key>
-    <column id="151" parent="12" name="id">
+    <column id="162" parent="13" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="152" parent="12" name="sub_asset_type">
+    <column id="163" parent="13" name="sub_asset_type">
       <Position>1</Position>
       <DataType>smallint|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="153" parent="12" name="vlan_ip">
+    <column id="164" parent="13" name="vlan_ip">
       <Position>2</Position>
       <DataType>char(39)|0</DataType>
     </column>
-    <column id="154" parent="12" name="intranet_ip">
+    <column id="165" parent="13" name="intranet_ip">
       <Position>3</Position>
       <DataType>char(39)|0</DataType>
     </column>
-    <column id="155" parent="12" name="model">
+    <column id="166" parent="13" name="model">
       <Position>4</Position>
       <DataType>varchar(128)|0</DataType>
     </column>
-    <column id="156" parent="12" name="firmware">
+    <column id="167" parent="13" name="firmware">
       <Position>5</Position>
       <DataType>varchar(128)|0</DataType>
     </column>
-    <column id="157" parent="12" name="port_num">
+    <column id="168" parent="13" name="port_num">
       <Position>6</Position>
       <DataType>smallint|0</DataType>
     </column>
-    <column id="158" parent="12" name="device_detail">
+    <column id="169" parent="13" name="device_detail">
       <Position>7</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="159" parent="12" name="asset_id">
+    <column id="170" parent="13" name="asset_id">
       <Position>8</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="160" parent="12" name="sqlite_autoindex_assets_networkdevice_1">
+    <index id="171" parent="13" name="sqlite_autoindex_assets_networkdevice_1">
       <ColNames>asset_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="161" parent="12">
+    <key id="172" parent="13">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="162" parent="12">
+    <key id="173" parent="13">
       <ColNames>asset_id</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_assets_networkdevice_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="163" parent="12">
+    <foreign-key id="174" parent="13">
       <ColNames>asset_id</ColNames>
       <RefTableName>assets_asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="164" parent="13" name="id">
+    <column id="175" parent="14" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="165" parent="13" name="sn">
+    <column id="176" parent="14" name="sn">
       <Position>1</Position>
       <DataType>varchar(128)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="166" parent="13" name="asset_type">
+    <column id="177" parent="14" name="asset_type">
       <Position>2</Position>
       <DataType>varchar(64)|0</DataType>
     </column>
-    <column id="167" parent="13" name="manufacturer">
+    <column id="178" parent="14" name="manufacturer">
       <Position>3</Position>
       <DataType>varchar(64)|0</DataType>
     </column>
-    <column id="168" parent="13" name="model">
+    <column id="179" parent="14" name="model">
       <Position>4</Position>
       <DataType>varchar(128)|0</DataType>
     </column>
-    <column id="169" parent="13" name="ram_size">
+    <column id="180" parent="14" name="ram_size">
       <Position>5</Position>
       <DataType>integer unsigned|0</DataType>
     </column>
-    <column id="170" parent="13" name="cpu_model">
+    <column id="181" parent="14" name="cpu_model">
       <Position>6</Position>
       <DataType>varchar(128)|0</DataType>
     </column>
-    <column id="171" parent="13" name="cpu_count">
+    <column id="182" parent="14" name="cpu_count">
       <Position>7</Position>
       <DataType>smallint unsigned|0</DataType>
     </column>
-    <column id="172" parent="13" name="cpu_core_count">
+    <column id="183" parent="14" name="cpu_core_count">
       <Position>8</Position>
       <DataType>smallint unsigned|0</DataType>
     </column>
-    <column id="173" parent="13" name="os_distribution">
+    <column id="184" parent="14" name="os_distribution">
       <Position>9</Position>
       <DataType>varchar(64)|0</DataType>
     </column>
-    <column id="174" parent="13" name="os_type">
+    <column id="185" parent="14" name="os_type">
       <Position>10</Position>
       <DataType>varchar(64)|0</DataType>
     </column>
-    <column id="175" parent="13" name="os_release">
+    <column id="186" parent="14" name="os_release">
       <Position>11</Position>
       <DataType>varchar(64)|0</DataType>
     </column>
-    <column id="176" parent="13" name="data">
+    <column id="187" parent="14" name="data">
       <Position>12</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="177" parent="13" name="c_time">
+    <column id="188" parent="14" name="c_time">
       <Position>13</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="178" parent="13" name="m_time">
+    <column id="189" parent="14" name="m_time">
       <Position>14</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="179" parent="13" name="approved">
+    <column id="190" parent="14" name="approved">
       <Position>15</Position>
       <DataType>bool|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="180" parent="13" name="sqlite_autoindex_assets_newassetapprovalzone_1">
+    <index id="191" parent="14" name="sqlite_autoindex_assets_newassetapprovalzone_1">
       <ColNames>sn</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="181" parent="13">
+    <key id="192" parent="14">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="182" parent="13">
+    <key id="193" parent="14">
       <ColNames>sn</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_assets_newassetapprovalzone_1</UnderlyingIndexName>
     </key>
-    <column id="183" parent="14" name="id">
+    <column id="194" parent="15" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="184" parent="14" name="name">
+    <column id="195" parent="15" name="name">
       <Position>1</Position>
       <DataType>varchar(64)|0</DataType>
     </column>
-    <column id="185" parent="14" name="model">
+    <column id="196" parent="15" name="model">
       <Position>2</Position>
       <DataType>varchar(128)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="186" parent="14" name="mac">
+    <column id="197" parent="15" name="mac">
       <Position>3</Position>
       <DataType>varchar(64)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="187" parent="14" name="ip_add">
+    <column id="198" parent="15" name="net_mask">
       <Position>4</Position>
-      <DataType>char(39)|0</DataType>
+      <DataType>varchar(64)|0</DataType>
     </column>
-    <column id="188" parent="14" name="net_mask">
+    <column id="199" parent="15" name="bonding">
       <Position>5</Position>
       <DataType>varchar(64)|0</DataType>
     </column>
-    <column id="189" parent="14" name="bonding">
+    <column id="200" parent="15" name="asset_id">
       <Position>6</Position>
-      <DataType>varchar(64)|0</DataType>
-    </column>
-    <column id="190" parent="14" name="asset_id">
-      <Position>7</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="191" parent="14" name="assets_nic_asset_id_model_mac_b2a6701b_uniq">
+    <column id="201" parent="15" name="ip_address">
+      <Position>7</Position>
+      <DataType>char(39)|0</DataType>
+    </column>
+    <index id="202" parent="15" name="assets_nic_asset_id_model_mac_b2a6701b_uniq">
       <ColNames>asset_id
 model
 mac</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="192" parent="14" name="assets_nic_asset_id_de9d6d3a">
-      <ColNames>asset_id</ColNames>
-    </index>
-    <key id="193" parent="14">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="194" parent="14">
-      <ColNames>asset_id</ColNames>
-      <RefTableName>assets_asset</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="195" parent="15" name="id">
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="196" parent="15" name="sn">
-      <Position>1</Position>
-      <DataType>varchar(128)|0</DataType>
-    </column>
-    <column id="197" parent="15" name="model">
-      <Position>2</Position>
-      <DataType>varchar(128)|0</DataType>
-    </column>
-    <column id="198" parent="15" name="manufacturer">
-      <Position>3</Position>
-      <DataType>varchar(128)|0</DataType>
-    </column>
-    <column id="199" parent="15" name="slot">
-      <Position>4</Position>
-      <DataType>varchar(64)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="200" parent="15" name="capacity">
-      <Position>5</Position>
-      <DataType>integer|0</DataType>
-    </column>
-    <column id="201" parent="15" name="asset_id">
-      <Position>6</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="202" parent="15" name="assets_ram_asset_id_slot_0336f41b_uniq">
-      <ColNames>asset_id
-slot</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <index id="203" parent="15" name="assets_ram_asset_id_e5b50d00">
+    <index id="203" parent="15" name="assets_nic_asset_id_de9d6d3a">
       <ColNames>asset_id</ColNames>
     </index>
     <key id="204" parent="15">
@@ -791,593 +789,641 @@ slot</ColNames>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="207" parent="16" name="sub_asset_type">
+    <column id="207" parent="16" name="sn">
       <Position>1</Position>
-      <DataType>smallint|0</DataType>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="208" parent="16" name="model">
+      <Position>2</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="209" parent="16" name="manufacturer">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="210" parent="16" name="slot">
+      <Position>4</Position>
+      <DataType>varchar(64)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="208" parent="16" name="asset_id">
-      <Position>2</Position>
+    <column id="211" parent="16" name="capacity">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+    </column>
+    <column id="212" parent="16" name="asset_id">
+      <Position>6</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="209" parent="16" name="sqlite_autoindex_assets_securitydevice_1">
-      <ColNames>asset_id</ColNames>
+    <index id="213" parent="16" name="assets_ram_asset_id_slot_0336f41b_uniq">
+      <ColNames>asset_id
+slot</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="210" parent="16">
+    <index id="214" parent="16" name="assets_ram_asset_id_e5b50d00">
+      <ColNames>asset_id</ColNames>
+    </index>
+    <key id="215" parent="16">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="211" parent="16">
-      <ColNames>asset_id</ColNames>
-      <UnderlyingIndexName>sqlite_autoindex_assets_securitydevice_1</UnderlyingIndexName>
-    </key>
-    <foreign-key id="212" parent="16">
+    <foreign-key id="216" parent="16">
       <ColNames>asset_id</ColNames>
       <RefTableName>assets_asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="213" parent="17" name="id">
+    <column id="217" parent="17" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="214" parent="17" name="sub_asset_type">
+    <column id="218" parent="17" name="sub_asset_type">
       <Position>1</Position>
       <DataType>smallint|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="215" parent="17" name="created_by">
+    <column id="219" parent="17" name="asset_id">
       <Position>2</Position>
-      <DataType>varchar(32)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="216" parent="17" name="model">
-      <Position>3</Position>
-      <DataType>varchar(128)|0</DataType>
-    </column>
-    <column id="217" parent="17" name="raid_type">
-      <Position>4</Position>
-      <DataType>varchar(512)|0</DataType>
-    </column>
-    <column id="218" parent="17" name="os_type">
-      <Position>5</Position>
-      <DataType>varchar(64)|0</DataType>
-    </column>
-    <column id="219" parent="17" name="os_distribution">
-      <Position>6</Position>
-      <DataType>varchar(64)|0</DataType>
-    </column>
-    <column id="220" parent="17" name="os_release">
-      <Position>7</Position>
-      <DataType>varchar(64)|0</DataType>
-    </column>
-    <column id="221" parent="17" name="asset_id">
-      <Position>8</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="222" parent="17" name="hosted_on_id">
-      <Position>9</Position>
-      <DataType>integer|0</DataType>
-    </column>
-    <index id="223" parent="17" name="sqlite_autoindex_assets_server_1">
+    <index id="220" parent="17" name="sqlite_autoindex_assets_securitydevice_1">
       <ColNames>asset_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="224" parent="17" name="assets_server_hosted_on_id_1f2367ea">
-      <ColNames>hosted_on_id</ColNames>
-    </index>
-    <key id="225" parent="17">
+    <key id="221" parent="17">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="226" parent="17">
+    <key id="222" parent="17">
       <ColNames>asset_id</ColNames>
-      <UnderlyingIndexName>sqlite_autoindex_assets_server_1</UnderlyingIndexName>
+      <UnderlyingIndexName>sqlite_autoindex_assets_securitydevice_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="227" parent="17">
+    <foreign-key id="223" parent="17">
       <ColNames>asset_id</ColNames>
       <RefTableName>assets_asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="228" parent="17">
+    <column id="224" parent="18" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="225" parent="18" name="sub_asset_type">
+      <Position>1</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="226" parent="18" name="created_by">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="227" parent="18" name="model">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="228" parent="18" name="raid_type">
+      <Position>4</Position>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+    <column id="229" parent="18" name="os_type">
+      <Position>5</Position>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="230" parent="18" name="os_distribution">
+      <Position>6</Position>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="231" parent="18" name="os_release">
+      <Position>7</Position>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="232" parent="18" name="asset_id">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="233" parent="18" name="hosted_on_id">
+      <Position>9</Position>
+      <DataType>integer|0</DataType>
+    </column>
+    <index id="234" parent="18" name="sqlite_autoindex_assets_server_1">
+      <ColNames>asset_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="235" parent="18" name="assets_server_hosted_on_id_1f2367ea">
+      <ColNames>hosted_on_id</ColNames>
+    </index>
+    <key id="236" parent="18">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="237" parent="18">
+      <ColNames>asset_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_assets_server_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="238" parent="18">
+      <ColNames>asset_id</ColNames>
+      <RefTableName>assets_asset</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="239" parent="18">
       <ColNames>hosted_on_id</ColNames>
       <RefTableName>assets_server</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="229" parent="18" name="id">
+    <column id="240" parent="19" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="230" parent="18" name="sub_asset_type">
+    <column id="241" parent="19" name="sub_asset_type">
       <Position>1</Position>
       <DataType>smallint|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="231" parent="18" name="license_num">
+    <column id="242" parent="19" name="license_num">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="232" parent="18" name="version">
+    <column id="243" parent="19" name="version">
       <Position>3</Position>
       <DataType>varchar(64)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="233" parent="18" name="sqlite_autoindex_assets_software_1">
+    <index id="244" parent="19" name="sqlite_autoindex_assets_software_1">
       <ColNames>version</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="234" parent="18">
+    <key id="245" parent="19">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="235" parent="18">
+    <key id="246" parent="19">
       <ColNames>version</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_assets_software_1</UnderlyingIndexName>
     </key>
-    <column id="236" parent="19" name="id">
+    <column id="247" parent="20" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="237" parent="19" name="sub_aset_type">
+    <column id="248" parent="20" name="asset_id">
       <Position>1</Position>
-      <DataType>smallint|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="238" parent="19" name="asset_id">
-      <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="239" parent="19" name="sqlite_autoindex_assets_storagedevice_1">
+    <column id="249" parent="20" name="sub_asset_type">
+      <Position>2</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="250" parent="20" name="sqlite_autoindex_assets_storagedevice_1">
       <ColNames>asset_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="240" parent="19">
+    <key id="251" parent="20">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="241" parent="19">
+    <key id="252" parent="20">
       <ColNames>asset_id</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_assets_storagedevice_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="242" parent="19">
+    <foreign-key id="253" parent="20">
       <ColNames>asset_id</ColNames>
       <RefTableName>assets_asset</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="243" parent="20" name="id">
+    <column id="254" parent="21" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="244" parent="20" name="name">
+    <column id="255" parent="21" name="name">
       <Position>1</Position>
       <DataType>varchar(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="245" parent="20" name="c_day">
+    <column id="256" parent="21" name="c_day">
       <Position>2</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="246" parent="20" name="sqlite_autoindex_assets_tag_1">
+    <index id="257" parent="21" name="sqlite_autoindex_assets_tag_1">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="247" parent="20">
+    <key id="258" parent="21">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="248" parent="20">
+    <key id="259" parent="21">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_assets_tag_1</UnderlyingIndexName>
     </key>
-    <column id="249" parent="21" name="id">
+    <column id="260" parent="22" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="250" parent="21" name="name">
+    <column id="261" parent="22" name="name">
       <Position>1</Position>
       <DataType>varchar(80)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="251" parent="21" name="sqlite_autoindex_auth_group_1">
+    <index id="262" parent="22" name="sqlite_autoindex_auth_group_1">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="252" parent="21">
+    <key id="263" parent="22">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="253" parent="21">
+    <key id="264" parent="22">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_auth_group_1</UnderlyingIndexName>
     </key>
-    <column id="254" parent="22" name="id">
+    <column id="265" parent="23" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="255" parent="22" name="group_id">
+    <column id="266" parent="23" name="group_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="256" parent="22" name="permission_id">
+    <column id="267" parent="23" name="permission_id">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="257" parent="22" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
+    <index id="268" parent="23" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
       <ColNames>group_id
 permission_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="258" parent="22" name="auth_group_permissions_group_id_b120cbf9">
+    <index id="269" parent="23" name="auth_group_permissions_group_id_b120cbf9">
       <ColNames>group_id</ColNames>
     </index>
-    <index id="259" parent="22" name="auth_group_permissions_permission_id_84c5c92e">
+    <index id="270" parent="23" name="auth_group_permissions_permission_id_84c5c92e">
       <ColNames>permission_id</ColNames>
     </index>
-    <key id="260" parent="22">
+    <key id="271" parent="23">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="261" parent="22">
+    <foreign-key id="272" parent="23">
       <ColNames>group_id</ColNames>
       <RefTableName>auth_group</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="262" parent="22">
+    <foreign-key id="273" parent="23">
       <ColNames>permission_id</ColNames>
       <RefTableName>auth_permission</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="263" parent="23" name="id">
+    <column id="274" parent="24" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="264" parent="23" name="content_type_id">
+    <column id="275" parent="24" name="content_type_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="265" parent="23" name="codename">
+    <column id="276" parent="24" name="codename">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="266" parent="23" name="name">
+    <column id="277" parent="24" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="267" parent="23" name="auth_permission_content_type_id_codename_01ab375a_uniq">
+    <index id="278" parent="24" name="auth_permission_content_type_id_codename_01ab375a_uniq">
       <ColNames>content_type_id
 codename</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="268" parent="23" name="auth_permission_content_type_id_2f476e4b">
+    <index id="279" parent="24" name="auth_permission_content_type_id_2f476e4b">
       <ColNames>content_type_id</ColNames>
     </index>
-    <key id="269" parent="23">
+    <key id="280" parent="24">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="270" parent="23">
+    <foreign-key id="281" parent="24">
       <ColNames>content_type_id</ColNames>
       <RefTableName>django_content_type</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="271" parent="24" name="id">
+    <column id="282" parent="25" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="272" parent="24" name="password">
+    <column id="283" parent="25" name="password">
       <Position>1</Position>
       <DataType>varchar(128)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="273" parent="24" name="last_login">
+    <column id="284" parent="25" name="last_login">
       <Position>2</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="274" parent="24" name="is_superuser">
+    <column id="285" parent="25" name="is_superuser">
       <Position>3</Position>
       <DataType>bool|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="275" parent="24" name="first_name">
+    <column id="286" parent="25" name="first_name">
       <Position>4</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="276" parent="24" name="last_name">
+    <column id="287" parent="25" name="last_name">
       <Position>5</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="277" parent="24" name="email">
+    <column id="288" parent="25" name="email">
       <Position>6</Position>
       <DataType>varchar(254)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="278" parent="24" name="is_staff">
+    <column id="289" parent="25" name="is_staff">
       <Position>7</Position>
       <DataType>bool|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="279" parent="24" name="is_active">
+    <column id="290" parent="25" name="is_active">
       <Position>8</Position>
       <DataType>bool|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="280" parent="24" name="date_joined">
+    <column id="291" parent="25" name="date_joined">
       <Position>9</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="281" parent="24" name="username">
+    <column id="292" parent="25" name="username">
       <Position>10</Position>
       <DataType>varchar(150)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="282" parent="24" name="sqlite_autoindex_auth_user_1">
+    <index id="293" parent="25" name="sqlite_autoindex_auth_user_1">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="283" parent="24">
+    <key id="294" parent="25">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="284" parent="24">
+    <key id="295" parent="25">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_auth_user_1</UnderlyingIndexName>
     </key>
-    <column id="285" parent="25" name="id">
+    <column id="296" parent="26" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="286" parent="25" name="user_id">
+    <column id="297" parent="26" name="user_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="287" parent="25" name="group_id">
+    <column id="298" parent="26" name="group_id">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="288" parent="25" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
+    <index id="299" parent="26" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
       <ColNames>user_id
 group_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="289" parent="25" name="auth_user_groups_user_id_6a12ed8b">
+    <index id="300" parent="26" name="auth_user_groups_user_id_6a12ed8b">
       <ColNames>user_id</ColNames>
     </index>
-    <index id="290" parent="25" name="auth_user_groups_group_id_97559544">
+    <index id="301" parent="26" name="auth_user_groups_group_id_97559544">
       <ColNames>group_id</ColNames>
     </index>
-    <key id="291" parent="25">
+    <key id="302" parent="26">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="292" parent="25">
+    <foreign-key id="303" parent="26">
       <ColNames>user_id</ColNames>
       <RefTableName>auth_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="293" parent="25">
+    <foreign-key id="304" parent="26">
       <ColNames>group_id</ColNames>
       <RefTableName>auth_group</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="294" parent="26" name="id">
+    <column id="305" parent="27" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="295" parent="26" name="user_id">
+    <column id="306" parent="27" name="user_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="296" parent="26" name="permission_id">
+    <column id="307" parent="27" name="permission_id">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="297" parent="26" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
+    <index id="308" parent="27" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
       <ColNames>user_id
 permission_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="298" parent="26" name="auth_user_user_permissions_user_id_a95ead1b">
+    <index id="309" parent="27" name="auth_user_user_permissions_user_id_a95ead1b">
       <ColNames>user_id</ColNames>
     </index>
-    <index id="299" parent="26" name="auth_user_user_permissions_permission_id_1fbb5f2c">
+    <index id="310" parent="27" name="auth_user_user_permissions_permission_id_1fbb5f2c">
       <ColNames>permission_id</ColNames>
     </index>
-    <key id="300" parent="26">
+    <key id="311" parent="27">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="301" parent="26">
+    <foreign-key id="312" parent="27">
       <ColNames>user_id</ColNames>
       <RefTableName>auth_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="302" parent="26">
+    <foreign-key id="313" parent="27">
       <ColNames>permission_id</ColNames>
       <RefTableName>auth_permission</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="303" parent="27" name="id">
+    <column id="314" parent="28" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="304" parent="27" name="object_id">
+    <column id="315" parent="28" name="object_id">
       <Position>1</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="305" parent="27" name="object_repr">
+    <column id="316" parent="28" name="object_repr">
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="306" parent="27" name="action_flag">
+    <column id="317" parent="28" name="action_flag">
       <Position>3</Position>
       <DataType>smallint unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="307" parent="27" name="change_message">
+    <column id="318" parent="28" name="change_message">
       <Position>4</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="308" parent="27" name="content_type_id">
+    <column id="319" parent="28" name="content_type_id">
       <Position>5</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="309" parent="27" name="user_id">
+    <column id="320" parent="28" name="user_id">
       <Position>6</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="310" parent="27" name="action_time">
+    <column id="321" parent="28" name="action_time">
       <Position>7</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="311" parent="27" name="django_admin_log_content_type_id_c4bce8eb">
+    <index id="322" parent="28" name="django_admin_log_content_type_id_c4bce8eb">
       <ColNames>content_type_id</ColNames>
     </index>
-    <index id="312" parent="27" name="django_admin_log_user_id_c564eba6">
+    <index id="323" parent="28" name="django_admin_log_user_id_c564eba6">
       <ColNames>user_id</ColNames>
     </index>
-    <key id="313" parent="27">
+    <key id="324" parent="28">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="314" parent="27">
+    <foreign-key id="325" parent="28">
       <ColNames>content_type_id</ColNames>
       <RefTableName>django_content_type</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="315" parent="27">
+    <foreign-key id="326" parent="28">
       <ColNames>user_id</ColNames>
       <RefTableName>auth_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="316" parent="28" name="id">
+    <column id="327" parent="29" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="317" parent="28" name="app_label">
+    <column id="328" parent="29" name="app_label">
       <Position>1</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="318" parent="28" name="model">
+    <column id="329" parent="29" name="model">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="319" parent="28" name="django_content_type_app_label_model_76bd3d3b_uniq">
+    <index id="330" parent="29" name="django_content_type_app_label_model_76bd3d3b_uniq">
       <ColNames>app_label
 model</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="320" parent="28">
+    <key id="331" parent="29">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="321" parent="29" name="id">
+    <column id="332" parent="30" name="id">
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="322" parent="29" name="app">
+    <column id="333" parent="30" name="app">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="323" parent="29" name="name">
+    <column id="334" parent="30" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="324" parent="29" name="applied">
+    <column id="335" parent="30" name="applied">
       <Position>3</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="325" parent="29">
+    <key id="336" parent="30">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="326" parent="30" name="session_key">
+    <column id="337" parent="31" name="session_key">
       <DataType>varchar(40)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="327" parent="30" name="session_data">
+    <column id="338" parent="31" name="session_data">
       <Position>1</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="328" parent="30" name="expire_date">
+    <column id="339" parent="31" name="expire_date">
       <Position>2</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="329" parent="30" name="sqlite_autoindex_django_session_1">
+    <index id="340" parent="31" name="sqlite_autoindex_django_session_1">
       <ColNames>session_key</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="330" parent="30" name="django_session_expire_date_a5c62663">
+    <index id="341" parent="31" name="django_session_expire_date_a5c62663">
       <ColNames>expire_date</ColNames>
     </index>
-    <key id="331" parent="30">
+    <key id="342" parent="31">
       <ColNames>session_key</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_django_session_1</UnderlyingIndexName>
     </key>
-    <column id="332" parent="31" name="type">
+    <column id="343" parent="32" name="type">
       <DataType>text|0</DataType>
     </column>
-    <column id="333" parent="31" name="name">
+    <column id="344" parent="32" name="name">
       <Position>1</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="334" parent="31" name="tbl_name">
+    <column id="345" parent="32" name="tbl_name">
       <Position>2</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="335" parent="31" name="rootpage">
+    <column id="346" parent="32" name="rootpage">
       <Position>3</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="336" parent="31" name="sql">
+    <column id="347" parent="32" name="sql">
       <Position>4</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="337" parent="32" name="name">
+    <column id="348" parent="33" name="name">
       <DataType>|0</DataType>
     </column>
-    <column id="338" parent="32" name="seq">
+    <column id="349" parent="33" name="seq">
       <Position>1</Position>
       <DataType>|0</DataType>
     </column>
